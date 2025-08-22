@@ -1,0 +1,16 @@
+{
+  "name": "root",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "projects/*"
+  ],
+  "scripts": {
+    "diff": "lerna run diff",
+    "synth": "lerna run synth"
+  },
+  "devDependencies": {
+    "aws-cdk": "^2.1025.0",
+    "lerna": "^8.2.3"
+  }
+}

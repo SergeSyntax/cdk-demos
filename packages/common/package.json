@@ -1,0 +1,39 @@
+{
+  "name": "common",
+  "version": "0.1.0",
+  "private": true,
+  "description": "a utility that used for common configurations, patterns and constructs",
+  "keywords": [],
+  "author": {
+    "name": "SergeSyntax"
+  },
+  "license": "UNLICENSED",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@tsconfig/node20": "^20.1.6",
+    "@types/jest": "^29.5.14",
+    "@types/node": "22.7.9",
+    "aws-cdk-lib": "2.208.0",
+    "constructs": "^10.0.0",
+    "jest": "^29.7.0",
+    "ts-jest": "^29.2.5",
+    "typescript": "~5.6.3"
+  },
+  "peerDependencies": {
+    "aws-cdk-lib": "2.208.0",
+    "constructs": "^10.0.0"
+  }
+}
