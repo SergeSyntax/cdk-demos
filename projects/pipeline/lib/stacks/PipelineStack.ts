@@ -2,6 +2,7 @@ import * as cdk from 'aws-cdk-lib';
 import * as ec2 from 'aws-cdk-lib/aws-ec2';
 import * as pipelines from 'aws-cdk-lib/pipelines';
 import { Construct } from 'constructs';
+import { PipelineStage } from '../pipelines/PipelineStage';
 
 export interface PipelineStackProps extends cdk.StackProps {}
 
@@ -11,7 +12,7 @@ export class PipelineStack extends cdk.Stack {
   constructor(scope: Construct, id: string, props: PipelineStackProps) {
     super(scope, id);
 
-    new pipelines.CodePipeline(this, 'AwesomePipeline', {
+    const pipeline = new pipelines.CodePipeline(this, 'AwesomePipeline', {
       pipelineName: 'AwesomePipeline',
       synth: new pipelines.ShellStep('Synth', {
         input: pipelines.CodePipelineSource.gitHub('SergeSyntax/cdk-demos', 'master'),
@@ -20,5 +21,11 @@ export class PipelineStack extends cdk.Stack {
       })
     });
     // test
+
+    const testStage = pipeline.addStage(
+      new PipelineStage(scope, 'PipelineTestStage', {
+        stageName: 'Test'
+      })
+    );
   }
 }
