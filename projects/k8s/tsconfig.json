@@ -1,0 +1,7 @@
+{
+  "extends": "common/tsconfig.base.json",
+  "exclude": ["node_modules", "cdk.out"],
+  "compilerOptions": {
+    "outDir": "dist"
+  }
+}
