@@ -27,5 +27,11 @@ export class PipelineStack extends cdk.Stack {
         stageName: 'Test'
       })
     );
+
+    testStage.addPre(
+      new pipelines.CodeBuildStep('unit-testts', {
+        commands: ['npm i', 'cd projects/pipeline', 'npm test']
+      })
+    );
   }
 }
