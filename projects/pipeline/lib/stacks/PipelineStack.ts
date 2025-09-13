@@ -19,5 +19,6 @@ export class PipelineStack extends cdk.Stack {
         primaryOutputDirectory: 'projects/pipeline/cdk.out'
       })
     });
+    // test
   }
 }
